@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Friend Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+    <h1> Survey Questions</h1><hr>
+    <h2> About You </h2>
+    <form>
+  <div class="form-group">
+    <label for="name">Your Name:</label>
+    <input type="text" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="photo">Link to Photo Image:</label>
+    <input type="url" class="form-control" id="image">
+  </div>
+     <div class="form-group">
+      <label for="sel1">Question 1:</label>
+      <p>How well do you understand sarcasm?<p>
+      <select class="form-control" id="q1" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+      <label for="sel1">Question 2:</label>
+      <p>Do you enjoy spending time outdoors?<p>
+      <select class="form-control" id="q2" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+      <label for="sel1">Question 3:</label>
+      <p>Are you adventerous with different cuisine?<p>
+      <select class="form-control" id="q3" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+      <label for="sel1">Question 4:</label>
+      <p>Does small talk drive you crazy?<p>
+      <select class="form-control" id="q4" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+      <label for="sel1">Question 5:</label>
+      <p>Do you enjoy texting silly things throughout the day?<p>
+      <select class="form-control" id="q5" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+      <label for="sel1">Question 6:</label>
+      <p>Do you prefer to have a set plan when it comes to hanging out?<p>
+      <select class="form-control" id="q6" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+              <br>
+      <label for="sel1">Question 7:</label>
+      <p>Do you enjoy laid-back activities?<p>
+      <select class="form-control" id="q7" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+                <br>
+      <label for="sel1">Question 8:</label>
+      <p>Are you competitive?<p>
+      <select class="form-control" id="q8" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+               <br>
+      <label for="sel1">Question 9:</label>
+      <p>Do you enjoy hanging out in large groups?<p>
+      <select class="form-control" id="q9" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+               <br>
+      <label for="sel1">Question 10:</label>
+      <p>Would you say that you have a good sense of humor?<p>
+      <select class="form-control" id="q10" placeholder="Select an Option">
+        <option>1(Strongly Disagree)</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5(Strongly Agree)</option>
+      </select>
+        <br>
+  <button type="submit" class="btn btn-success" id="submit">Submit</button>
+</form>
+
+
+</body>
+
+<script type="text/javascript">
+
+$("#submit").on("click", function(){
+  event.preventDefault();
+
+		  
+        var userData = {
+	    		name: $("#name").val(),
+	    		photo: $("#image").val(),
+	    		scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+	    	}
+        // console.log(userData);
+        // var currentURL = window.location.origin;
+        $.post("/api/friends", userData, function(data){
+          
+        })
+});
+</script>
+</html>
