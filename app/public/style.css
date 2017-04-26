@@ -1,0 +1,37 @@
+body{
+    background-image: url("images/food.png");
+    font-family: 'BioRhyme', serif;
+    font-size: 24px;
+    color: #3f3c36;
+    text-shadow: 2px 2px whitesmoke;
+    
+}
+
+h1,h2{
+    font-family: 'Bungee Shade', cursive;
+    color: #3f3c36;
+    text-align: center;
+    
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2{
+    font-size: 28px;
+}
+
+.jumbotron{
+    background-color: #ffffe6;
+    border: 8px solid #3f3c36;
+    
+    
+}
+
+.form-control{
+    width: 40%;
+    background-color: #3f3c36;
+    color: #ffffe6; 
+}
+
